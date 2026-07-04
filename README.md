@@ -7,15 +7,15 @@ Quick start
 Windows PowerShell:
 
 ```powershell
-./packages/TodoApi/build/build.ps1
-./packages/TodoApi/build/run.ps1
+./packages/backend/build/build.ps1
+./packages/backend/build/run.ps1
 ```
 
 macOS / Linux:
 
 ```bash
-./packages/TodoApi/build/build.sh
-./packages/TodoApi/build/run.sh
+./packages/backend/build/build.sh
+./packages/backend/build/run.sh
 ```
 
 API endpoints (after running):

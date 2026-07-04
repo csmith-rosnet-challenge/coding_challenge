@@ -1,4 +1,4 @@
-namespace TodoApi.Models;
+namespace Backend.Models;
 
 public class TodoItem
 {

@@ -1,9 +1,9 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using TodoApi.Data;
-using TodoApi.Models;
+using Backend.Data;
+using Backend.Models;
 
-namespace TodoApi.Controllers;
+namespace Backend.Controllers;
 
 [ApiController]
 [Route("api/[controller]")]
