@@ -5,19 +5,16 @@ namespace Backend.Services;
 
 public class PeriodicStatusFetcher : BackgroundService
 {
-    private readonly IExternalStatusService _statusService;
-    private readonly ExternalStatusHistoryService _historyService;
     private readonly ILogger<PeriodicStatusFetcher> _logger;
     private readonly IConfiguration _configuration;
+    private readonly IServiceScopeFactory _scopeFactory;
 
     public PeriodicStatusFetcher(
-        IExternalStatusService statusService,
-        ExternalStatusHistoryService historyService,
+        IServiceScopeFactory scopeFactory,
         ILogger<PeriodicStatusFetcher> logger,
         IConfiguration configuration)
     {
-        _statusService = statusService;
-        _historyService = historyService;
+        _scopeFactory = scopeFactory;
         _logger = logger;
         _configuration = configuration;
     }
@@ -39,6 +36,10 @@ public class PeriodicStatusFetcher : BackgroundService
             {
                 _logger.LogInformation("Running periodic status fetch for {Count} URLs.", urlList.Count);
 
+                using var scope = _scopeFactory.CreateScope();
+                var statusService = scope.ServiceProvider.GetRequiredService<IExternalStatusService>();
+                var historyService = scope.ServiceProvider.GetRequiredService<ExternalStatusHistoryService>();
+
                 var request = new ExternalStatusRequest
                 {
                     Urls = urlList,
@@ -46,8 +47,8 @@ public class PeriodicStatusFetcher : BackgroundService
                     MaxConcurrency = _configuration.GetValue<int>("StatusFetcher:MaxConcurrency", 5)
                 };
 
-                var results = await _statusService.CheckStatusAsync(request, stoppingToken);
-                await _historyService.SaveAsync(results);
+                var results = await statusService.CheckStatusAsync(request, stoppingToken);
+                await historyService.SaveAsync(results);
             }
             catch (Exception ex)
             {
