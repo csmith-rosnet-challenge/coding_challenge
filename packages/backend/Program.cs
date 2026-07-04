@@ -12,7 +12,7 @@ builder.Services.AddHttpClient();
 builder.Services.AddScoped<IExternalStatusService, ExternalStatusService>();
 
 builder.Services.AddDbContext<AppDbContext>(options =>
-    options.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection") ?? "Data Source=todo.db")
+    options.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection") ?? "Data Source=backend.db")
 );
 
 var app = builder.Build();
