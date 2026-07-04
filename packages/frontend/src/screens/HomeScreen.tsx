@@ -3,6 +3,7 @@ import StatusForm from '../components/StatusForm';
 import ResultTable from '../components/ResultTable';
 import HistoryTable from '../components/HistoryTable';
 import DummyComponent from '../components/DummyComponent';
+import HistoryCharts from '../components/HistoryCharts';
 import {
   fetchExternalStatus,
   fetchExternalStatusHistory,
@@ -80,7 +81,8 @@ export default function HomeScreen() {
 
       <section className="card">
         <h2>History</h2>
-        <HistoryTable history={history} />
+        <HistoryCharts history={history} />
+        <hr />
       </section>
     </div>
   );
