@@ -1,0 +1,9 @@
+{
+  "name": "frontend",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "echo \"Placeholder: frontend not implemented yet\" && exit 0",
+    "build": "echo \"Placeholder build\" && exit 0"
+  }
+}

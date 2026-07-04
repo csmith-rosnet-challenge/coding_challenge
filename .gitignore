@@ -1,0 +1,11 @@
+bin/
+obj/
+**/bin/
+**/obj/
+*.db
+*.sqlite
+.vs/
+*.user
+*.suo
+_ReSharper*/
+node_modules/
