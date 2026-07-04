@@ -1,0 +1,111 @@
+.app-shell {
+  max-width: 1024px;
+  margin: 0 auto;
+  padding: 24px;
+}
+
+header {
+  margin-bottom: 24px;
+}
+
+h1 {
+  margin: 0 0 8px;
+  font-size: clamp(2rem, 3vw, 3rem);
+}
+
+h2 {
+  margin-top: 0;
+}
+
+.card {
+  background: white;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 8px 25px rgba(15, 23, 42, 0.04);
+}
+
+textarea {
+  width: 100%;
+  min-height: 120px;
+  margin-top: 8px;
+  border-radius: 12px;
+  border: 1px solid #cbd5e1;
+  padding: 12px;
+}
+
+input[type='number'] {
+  width: 120px;
+  margin-left: 8px;
+  border-radius: 10px;
+  border: 1px solid #cbd5e1;
+  padding: 8px 10px;
+}
+
+label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+.controls-row {
+  display: grid;
+  gap: 16px;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+}
+
+.button-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 16px;
+}
+
+button {
+  border: none;
+  border-radius: 12px;
+  background: #2563eb;
+  color: white;
+  padding: 12px 20px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+button:hover:not(:disabled) {
+  background: #1d4ed8;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 16px;
+}
+
+thead {
+  background: #f8fafc;
+}
+
+th,
+td {
+  text-align: left;
+  padding: 12px 10px;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+tr:last-child td {
+  border-bottom: none;
+}
+
+.error {
+  margin-top: 16px;
+  padding: 12px;
+  border-radius: 12px;
+  background: #fee2e2;
+  color: #991b1b;
+}

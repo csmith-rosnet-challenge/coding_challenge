@@ -9,3 +9,4 @@ obj/
 *.suo
 _ReSharper*/
 node_modules/
+**/.yarn/cache/**

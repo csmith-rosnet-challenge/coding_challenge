@@ -1,5 +1,24 @@
-# Frontend placeholder
+# Frontend
 
-This folder will contain the React frontend application that consumes the API at `/api/TodoItems`.
+This folder contains a Vite + React frontend for displaying external status checks and history.
 
-Placeholder for now.
+## Install
+
+```bash
+cd packages/frontend
+npm install
+```
+
+## Development
+
+```bash
+npm run dev
+```
+
+## Build
+
+```bash
+npm run build
+```
+
+The app expects the backend to be available at `http://localhost:5000` by default.
