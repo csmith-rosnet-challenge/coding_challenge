@@ -10,6 +10,8 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddHttpClient();
 
 builder.Services.AddScoped<IExternalStatusService, ExternalStatusService>();
+builder.Services.AddScoped<ExternalStatusHistoryService>();
+builder.Services.AddHostedService<PeriodicStatusFetcher>();
 
 builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection") ?? "Data Source=backend.db")
