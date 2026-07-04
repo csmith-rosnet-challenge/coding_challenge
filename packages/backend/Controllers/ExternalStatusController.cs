@@ -5,7 +5,7 @@ using Backend.Services;
 namespace Backend.Controllers;
 
 [ApiController]
-[Route("api/[controller]")]
+[Route("api/external-status")]
 public class ExternalStatusController : ControllerBase
 {
     private readonly IExternalStatusService _statusService;
